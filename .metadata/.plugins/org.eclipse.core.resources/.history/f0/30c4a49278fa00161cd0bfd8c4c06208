@@ -1,0 +1,15 @@
+package messagesystem;
+
+import java.awt.FlowLayout;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class LoginView extends JPanel{
+	private JLabel loginLabel = new JLabel("Login View");
+	
+	public LoginView(){
+		setLayout(new FlowLayout());
+		add(loginLabel);
+	}
+}

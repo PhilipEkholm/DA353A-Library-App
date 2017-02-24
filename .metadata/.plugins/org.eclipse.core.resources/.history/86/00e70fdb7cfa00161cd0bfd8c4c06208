@@ -1,0 +1,9 @@
+package messagesystem;
+
+public class LoginController {
+	
+	
+	public boolean userExists(){
+		
+	}
+}	

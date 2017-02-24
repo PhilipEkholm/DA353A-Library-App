@@ -1,0 +1,10 @@
+package messagesystem;
+
+public class Post {
+	private String title, message;
+	
+	public Post(title, message){
+		title = title;
+		message = messae;
+	}
+}

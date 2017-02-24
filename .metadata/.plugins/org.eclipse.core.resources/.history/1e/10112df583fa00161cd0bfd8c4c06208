@@ -1,0 +1,11 @@
+package messagesystem;
+
+public class Server {
+	private User[] users;
+	
+	public Server(){
+		this.users[0] = new User("Philip", "1234");
+	}
+	
+	
+}

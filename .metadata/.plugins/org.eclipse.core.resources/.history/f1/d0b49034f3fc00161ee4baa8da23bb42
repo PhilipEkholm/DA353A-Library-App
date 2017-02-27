@@ -1,0 +1,9 @@
+package common;
+
+public class GeneralController {
+	private Lantagare persons[];
+	
+	public GeneralController(){
+		
+	}
+}

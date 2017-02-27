@@ -201,3 +201,13 @@ Java Model Exception: Java Model Status [Person(String, String) [in Person [in [
 	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:165)
 !SUBENTRY 1 org.eclipse.jdt.core 4 969 2017-02-27 14:52:29.971
 !MESSAGE Person(String, String) [in Person [in [Working copy] Person.java [in common [in src [in Bibliotek]]]]] does not exist
+!SESSION 2017-02-27 17:01:22.127 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_101
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=sv_SE
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/Fille/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/Fille/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2017-02-27 17:01:32.682
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

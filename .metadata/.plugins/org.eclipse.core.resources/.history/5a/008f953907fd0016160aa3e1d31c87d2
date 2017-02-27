@@ -2,9 +2,7 @@ package login;
 
 import javax.swing.JFrame;
 
-import common.GeneralController;
-
-public class LoginController extends GeneralController{
+public class LoginController {
 	public static void main(String[] args) {
 		LoginController lc = new LoginController();
 		lc.startupJFrame();

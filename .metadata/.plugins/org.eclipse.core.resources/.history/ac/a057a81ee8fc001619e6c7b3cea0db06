@@ -1,0 +1,7 @@
+package testing;
+
+public class Prototype {
+	public static void main(String[] args) {
+		Prototypes pt = new Pro
+	}
+}

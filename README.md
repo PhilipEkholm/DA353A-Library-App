@@ -43,6 +43,8 @@ Slutligen ska systemet byggas enligt MVC-riktlinjer (Model View Controller)
 2. Var person i gruppen ritar ett sekvensdiagram var. Notera att sekvensdiagram 1-4 listade i uppgiften måste finnas med som minimum. Alla meddelanden/iterationer/selektioner i kod måste finnas med i sekvensdiagrammen.
 
 
+En ändring
+
 
 
 

@@ -1,16 +1,11 @@
-package login;
+package messagesystem;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 public class LoginView extends JPanel{
-	private static final long serialVersionUID = 1L;
-
 	private JLabel loginLabel = new JLabel("Login View");
 	private JTextField 	field1 = new JTextField(),
 						field2 = new JTextField();

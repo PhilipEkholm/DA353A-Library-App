@@ -19,7 +19,6 @@ public class LoginView extends JPanel {
 	private JLabel info = new JLabel("Personnr (10 tecken)");
 	private JButton button = new JButton("Fortsätt");
 	private JTextField field = new JTextField();
-	private LoginController login = new LoginController();
 
 	public LoginView() {
 		setLayout(new BorderLayout());
@@ -32,13 +31,16 @@ public class LoginView extends JPanel {
 		button.addActionListener(listner);
 	}
 
-	public String getPersonnr() {
-		return field.getText();
+	public int getPersonnrLength() {
+		return field.getText().length();
 	}
+
 
 	private class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
-			login.controller();
+			if(getPersonnrLength()!=10){
+				JOptionPane.showMessageDialog(null, "ogiltig personnr");
+			}
 		}
 	}
 }

@@ -1,16 +1,11 @@
 package library;
 
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class LoginController {
-	private LoginView viewer;
+import p3.SSPPlayer;
+import p3.SSPViewer;
 
-	public void controller() {
-		if (viewer.getPersonnr().length() != 10) {
-			JOptionPane.showMessageDialog(null, "Var god ange ett giltigt personnummer");
-		} else {
-			JOptionPane.showMessageDialog(null, "nice");
-		}
-	}
+
+public class LoginController {
+	
 }

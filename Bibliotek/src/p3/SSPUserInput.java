@@ -45,7 +45,6 @@ public class SSPUserInput extends JPanel {
 
 		btnAvsluta.addActionListener(listner);
 		btnNew.addActionListener(listner);
-		// btnSam.addActionListener( new SummaryListener() );
 	}
 
 	private class ButtonListener implements ActionListener {

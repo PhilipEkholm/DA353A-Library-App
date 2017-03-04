@@ -1,6 +1,5 @@
 package collections;
 
-import java.awt.BufferCapabilities;
 import java.util.Iterator;
 
 /**

@@ -1,0 +1,14 @@
+Ängelholm 12.920 56.270
+Höganäs 12.640 56.220
+Hässleholm 13.787 56.170 
+Helsingborg 12.770 56.060
+Kristianstad 14.143 56.033
+Åhus 14.283 55.917
+Landskrona 12.873 55.897
+Eslöv 13.313 55.843
+Lund 13.203 55.715
+Malmö 13.000 55.600
+Simrishamn 14.308 55.540
+Ystad 13.797 55.422
+Skanör-Falsterbo 12.850 55.417
+Trelleborg 13.167 55.377

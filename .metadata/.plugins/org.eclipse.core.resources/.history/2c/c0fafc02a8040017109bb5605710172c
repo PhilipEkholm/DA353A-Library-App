@@ -1,0 +1,9 @@
+package login;
+
+import javax.swing.JFrame;
+
+import common.GeneralController;
+
+public class LoginController extends GeneralController{
+	
+}

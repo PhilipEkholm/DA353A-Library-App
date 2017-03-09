@@ -1,9 +1,0 @@
-package library;
-
-public class GeneralController {
-	private Lantagare persons[];
-	
-	public GeneralController(){
-		
-	}
-}

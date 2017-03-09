@@ -13,4 +13,6 @@
 <fullyQualifiedTypeName name="common.Person"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="library.LibraryController"/>
+<fullyQualifiedTypeName name="login.LoginController"/>
 </qualifiedTypeNameHistroy>

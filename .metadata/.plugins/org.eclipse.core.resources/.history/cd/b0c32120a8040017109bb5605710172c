@@ -1,0 +1,11 @@
+package common;
+
+import library.LibraryController;
+
+public class Main {
+	public static void main(String[] args) {
+		GeneralController gc = new GeneralController();
+		LibraryController lc = new LibraryController();
+		LoginController lc = new LoginController();
+	}
+}

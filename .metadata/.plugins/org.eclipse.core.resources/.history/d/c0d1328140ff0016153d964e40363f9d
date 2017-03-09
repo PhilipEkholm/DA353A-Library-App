@@ -1,7 +1,0 @@
-package ws4;
-
-public class Lanekort {
-	public int hamtaKortNr(){
-		return 1234;
-	}
-}

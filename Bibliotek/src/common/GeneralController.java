@@ -1,11 +1,9 @@
 package common;
 
+import login.LoginController;
+
 public class GeneralController {
 	protected Person persons[];
-	
-	public GeneralController(){
-		this.loadPersons();
-	}
 	
 	private void loadPersons(){
 		

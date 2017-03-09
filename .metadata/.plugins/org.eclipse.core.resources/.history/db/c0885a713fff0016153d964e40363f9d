@@ -1,9 +1,0 @@
-package ws4;
-
-public class Lanekatalog {
-	public boolean lan(int bokID, int kortNr, int pin){
-		//For...
-		
-		return false;
-	}
-}

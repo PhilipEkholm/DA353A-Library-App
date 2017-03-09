@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+<<<<<<< HEAD
 public class LoginView extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JFrame frame = new JFrame("Login");
@@ -60,4 +61,8 @@ public class LoginView extends JFrame {
 		LoginView lv = new LoginView();
 		
 	}
+=======
+public class LoginView extends JPanel{
+	
+>>>>>>> master
 }

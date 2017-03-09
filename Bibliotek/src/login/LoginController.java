@@ -3,5 +3,8 @@ package login;
 import common.GeneralController;
 
 public class LoginController extends GeneralController{
-	
+	public LoginController(){
+		//Skriv kod här
+		System.out.println("LoginController");
+	}
 }

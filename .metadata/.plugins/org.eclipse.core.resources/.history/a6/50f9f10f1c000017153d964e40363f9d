@@ -1,9 +1,0 @@
-package ws4;
-
-public class Bok {
-	private int id;
-	
-	public Bok(int id){
-		this.id = id;
-	}
-}

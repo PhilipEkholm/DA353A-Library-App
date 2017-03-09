@@ -1,9 +1,13 @@
 package common;
 
 public class GeneralController {
-	private Person persons[];
+	protected Person persons[];
 	
 	public GeneralController(){
+		this.loadPersons();
+	}
+	
+	private void loadPersons(){
 		
 	}
 }

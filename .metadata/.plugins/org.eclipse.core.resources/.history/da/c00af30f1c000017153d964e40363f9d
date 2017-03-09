@@ -1,0 +1,9 @@
+package ws4;
+
+public class Lanekortsinnehavare {
+	public static void main(String[] args) {
+		Lanekatalog lk = new Lanekatalog();
+		
+		
+	}
+}

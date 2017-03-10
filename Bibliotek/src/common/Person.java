@@ -10,4 +10,21 @@ public class Person {
 		this.personnr = personnr;
 		this.phoneNumber = phoneNumber;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getPersonnr() {
+		return personnr;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	
+	@Override
+	public String toString(){
+		return this.getName() + ", " + this.getPersonnr() + ", " + this.getPhoneNumber();
+	}
 }

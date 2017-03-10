@@ -1,0 +1,13 @@
+package login;
+
+import java.awt.Dimension;
+
+import javax.swing.JPanel;
+
+public class LoginView extends JPanel{
+	private static final long serialVersionUID = 1L;
+	
+	public LoginView(){
+		this.setPreferredSize(new Dimension(400, 200));
+	}
+}

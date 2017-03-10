@@ -1,0 +1,16 @@
+package login;
+
+import java.awt.Dimension;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class LoginView extends JPanel{
+	private static final long serialVersionUID = 1L;
+	private JLabel 	label1 = new JLabel("Mata in personnr (10 siffor) för att gå vidare: yymmdd-xyzw"),
+					label2 = new JLabel("Personnr: ");
+	
+	public LoginView(){
+		this.setPreferredSize(new Dimension(400, 200));
+	}
+}

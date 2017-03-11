@@ -19,6 +19,7 @@ import structures.HashtableOH;
 
 public class GeneralController {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	protected HashtableOH<String, Person> persons = new HashtableOH<String, Person>(15);
 	
 	public GeneralController(String filePath){
@@ -65,6 +66,13 @@ public class GeneralController {
 			    line = br.readLine();
 			}
 		}
+	}
+=======
+	protected Person persons[];
+>>>>>>> Stashed changes
+	
+	public static void main(String[] args) {
+		
 	}
 	
 	public static void main(String[] args) {

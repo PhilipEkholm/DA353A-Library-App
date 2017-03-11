@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchHistory>
 <launchGroup id="org.eclipse.debug.ui.launchGroup.debug">
@@ -37,6 +38,8 @@
 </launchGroup>
 </launchHistory>
 =======
+=======
+>>>>>>> Stashed changes
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchHistory>
 <launchGroup id="org.eclipse.debug.ui.launchGroup.debug">
@@ -68,4 +71,7 @@
 <favorites/>
 </launchGroup>
 </launchHistory>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 INDEX VERSION 1.129+/Users/Fille/Dev/G1-DS-Java/.metadata/.plugins/org.eclipse.jdt.core
 1044104405.index
 995153890.index
@@ -26,3 +27,24 @@ INDEX VERSION 1.129+/Users/Fille/Dev/G1-DS-Java/.metadata/.plugins/org.eclipse.j
 2763200912.index
 1833648217.index
 1735796480.index
+=======
+INDEX VERSION 1.129+E:\Filer\Documents\G1-DS-Java\.metadata\.plugins\org.eclipse.jdt.core
+2800558102.index
+2809250744.index
+781808.index
+2855899100.index
+3407430047.index
+985286902.index
+808374113.index
+618723895.index
+2133282975.index
+471236001.index
+3417200662.index
+414978335.index
+2637943071.index
+2047351195.index
+1644702904.index
+2019903893.index
+1075794691.index
+4184201189.index
+>>>>>>> Stashed changes

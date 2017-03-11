@@ -18,6 +18,7 @@ import structures.HashtableOH;
  */
 
 public class GeneralController {
+<<<<<<< Updated upstream
 	protected HashtableOH<String, Person> persons = new HashtableOH<String, Person>(15);
 	
 	public GeneralController(String filePath){
@@ -35,6 +36,9 @@ public class GeneralController {
 			e.printStackTrace();
 		}
 	}
+=======
+	protected Person persons[];
+>>>>>>> Stashed changes
 	
 	protected void loadWindow(JPanel panel, String windowTitle){
 		JFrame frame = new JFrame(windowTitle);
@@ -61,6 +65,10 @@ public class GeneralController {
 			    line = br.readLine();
 			}
 		}
+	}
+	
+	public static void main(String[] args) {
+		
 	}
 }
 

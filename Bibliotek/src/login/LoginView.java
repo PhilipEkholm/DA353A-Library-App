@@ -2,7 +2,8 @@ package login;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -16,10 +17,17 @@ public class LoginView extends JPanel{
 	private JTextField personField = new JTextField();
 	private JButton sendBtn = new JButton("Gå vidare");
 	
-	public LoginView(){
-		this.setPreferredSize(new Dimension(400, 200));
+	public LoginView(LoginController controller){
+		this.setPreferredSize(new Dimension(400, 120));
 		this.setBackground(Color.WHITE);
 		this.setLayout(null);
+		
+		sendBtn.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				controller.validate(personField.getText());
+			}
+		});
 		
 		this.setDimensions();
 		this.addComponents();
@@ -29,6 +37,7 @@ public class LoginView extends JPanel{
 		label1.setBounds(10, 10, 400, 25);
 		label2.setBounds(10, 50, 100, 25);
 		personField.setBounds(80, 48, 160, 30);
+		sendBtn.setBounds(250, 48, 90, 30);
 	}
 	
 	private void addComponents(){

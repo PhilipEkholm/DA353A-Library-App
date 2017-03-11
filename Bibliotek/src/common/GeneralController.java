@@ -1,13 +1,21 @@
 package common;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import helpclasses.Streams;
 import structures.HashtableOH;
+
+/**
+ *	GeneralController
+ *
+ * 	The GeneralController class is responsible for starting windows, loading
+ * 	in files and storing them into suitable data-structures.
+ */
 
 public class GeneralController {
 	protected HashtableOH<String, Person> persons = new HashtableOH<String, Person>(15);
@@ -18,7 +26,7 @@ public class GeneralController {
 	
 	private void loadPersons(String filePath){
 		try {
-			Streams.readPersons(persons, filePath);
+			GeneralController.readPersons(persons, filePath);
 		} catch (FileNotFoundException e) {
 			System.out.println("Filen " + filePath + "Kunde ej hittas");
 			e.printStackTrace();
@@ -37,6 +45,22 @@ public class GeneralController {
 		
 		frame.pack();
 		frame.setVisible(true);
+	}
+	
+	public static void readPersons(HashtableOH<String, Person> map, String filePath) 
+		throws FileNotFoundException, IOException{
+			
+		try(BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+		    String line = br.readLine();
+			
+		    while (line != null) {
+			   	String[] details = line.split(";");
+			   	Person p = new Person(details[0], details[1], details[2]);
+			        
+			    map.put(p.getPersonnr(), p);
+			    line = br.readLine();
+			}
+		}
 	}
 }
 

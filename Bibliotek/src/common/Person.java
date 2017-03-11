@@ -1,5 +1,12 @@
 package common;
 
+/**
+ *	Person
+ *
+ * 	Person is a class for storing common information about
+ * 	people (a.k.a. Lantagare).
+ */
+
 public class Person {
 	private String 	name,
 					personnr,

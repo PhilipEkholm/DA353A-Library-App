@@ -10,8 +10,8 @@ import common.GeneralController;
 
 public class LibraryController extends GeneralController{
 	private static String filePathMedia = "files/Media.txt";
-	private AVLTree<String, Book> bookTree = new AVLTree<String, Book>();
-	private AVLTree<String, DVD> DVDTree = new AVLTree<String, DVD>();
+	protected AVLTree<String, Book> bookTree = new AVLTree<String, Book>();
+	protected AVLTree<String, DVD> DVDTree = new AVLTree<String, DVD>();
 
 	public LibraryController(String filePath) {
 		super(filePath);
@@ -25,9 +25,6 @@ public class LibraryController extends GeneralController{
 		catch (IOException e2) {
 			e2.printStackTrace();
 		}
-		
-		bookTree.root().showAVL();
-		DVDTree.root().showAVL();
 	}
 	
 	public static void readBooks(AVLTree<String, Book> tree, String filePath) 

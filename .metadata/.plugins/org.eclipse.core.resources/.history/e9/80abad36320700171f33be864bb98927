@@ -1,0 +1,36 @@
+package exchange;
+
+import java.awt.FlowLayout;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class BorrowedItemsView extends JPanel{
+	private static final long serialVersionUID = 1L;
+	private JLabel 	personnrLabel = new JLabel("Ändra låntagare: "),
+					returnLabel = new JLabel("Återlämna: ");
+	private JTextArea currentItems = new JTextArea();
+	private JTextField 	personField = new JTextField(),
+						returnField = new JTextField();
+	private JButton changePersonButton = new JButton("Ändra!"),
+					returnItemButton = new JButton("Återlämna!");
+	
+	public BorrowedItemsView(){
+		this.setLayout(new FlowLayout());
+		
+		this.setDimensions();
+		this.addComponents();
+	}
+	
+	private void setDimensions(){
+		
+	}
+	
+	private void addComponents(){
+		this.add(personnrLabel);
+		this.add(personField);
+		this.add(comp)
+	}
+}

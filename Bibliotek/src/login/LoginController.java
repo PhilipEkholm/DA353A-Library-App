@@ -4,7 +4,6 @@ import javax.swing.JOptionPane;
 
 import common.GeneralController;
 import exchange.ItemsController;
-import library.LibraryController;
 
 /**
  *	LoginController
@@ -56,7 +55,7 @@ public class LoginController extends GeneralController{
 			if(result == JOptionPane.OK_OPTION){
 				view.setVisible(false);
 				
-				new ItemsController(filePathPersons);
+				new ItemsController(filePathPersons, super.getWindow(0));
 			}
 		}
 		else{

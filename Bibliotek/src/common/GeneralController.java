@@ -54,6 +54,10 @@ public class GeneralController {
 		return windowSessions.get(index);
 	}
 	
+	protected void addFrame(JFrame frame){
+		windowSessions.add(frame);
+	}
+	
 	public static void readPersons(HashtableOH<String, Person> map, String filePath) 
 		throws FileNotFoundException, IOException{
 			

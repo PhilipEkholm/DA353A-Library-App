@@ -1,0 +1,55 @@
+package exchange;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JPanel;
+
+public class ItemsView extends JPanel{
+	private static final long serialVersionUID = 1L;
+	
+	public ItemsView(){
+		this.setLayout(new BorderLayout());
+		
+		this.setDimensions();
+		this.setActionListeners();
+		this.addComponents();
+	}
+	
+	private void setDimensions(){
+		
+	}
+	
+	private void setActionListeners(){
+		
+	}
+	
+	private void addComponents(){
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

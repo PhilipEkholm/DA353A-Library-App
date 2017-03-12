@@ -1,0 +1,14 @@
+package exchange;
+
+import java.awt.Dimension;
+
+import javax.swing.JPanel;
+
+public class ItemsView extends JPanel{
+	private static final long serialVersionUID = 1L;
+	
+	public ItemsView(){
+		this.setPreferredSize(new Dimension(400, 400));
+		this.setLayout(new BorderLayout());
+	}
+}

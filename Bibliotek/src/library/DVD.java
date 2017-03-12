@@ -10,4 +10,18 @@ public class DVD extends Media{
 		this.name = name;
 		this.actors = actors;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String[] getActors() {
+		String[] newArray = new String[actors.length];
+		
+		for(int i = 0; i < newArray.length; i++){
+			newArray[i] = actors[i];
+		}
+		
+		return newArray;
+	}
 }

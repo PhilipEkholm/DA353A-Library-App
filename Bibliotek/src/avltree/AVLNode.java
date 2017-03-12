@@ -11,7 +11,7 @@ package avltree;
 *   @author Philip Ekholm
 */
 
-class AVLNode<K,V> {
+public class AVLNode<K,V> {
     K key;
     V value;
     AVLNode<K,V> left;

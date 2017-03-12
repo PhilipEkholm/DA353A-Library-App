@@ -3,6 +3,7 @@ package login;
 import javax.swing.JOptionPane;
 
 import common.GeneralController;
+import exchange.ItemsController;
 import library.LibraryController;
 
 /**
@@ -14,6 +15,7 @@ import library.LibraryController;
 
 public class LoginController extends GeneralController{
 	private String filePathPersons;
+	private LoginView view = new LoginView(this);
 	
 	/**
 	 *	Default constructor will take arguments for loading
@@ -30,33 +32,36 @@ public class LoginController extends GeneralController{
 	}
 	
 	/**
-	 *	The method will call  
+	 *	The method will call 
 	 */
 	
 	public void startLoginView(){
-		super.loadWindow(new LoginView(this), "Logga in");
+		super.loadWindow(view, "Logga in");
 	}
 	
 	/**
 	 *	Validates the number passed in, will allow access
-	 *	if number can be found as key. Result will be shown as
-	 *	a JOptionPane.
+	 *	if number can be found as key. A confirmDialog
+	 *	will then be opened to confirm the login.
+	 *
+	 *	If accepted, a LibraryController will be instantiated.
 	 *
 	 * 	@param number number entered in the loginView
 	 */
 	
 	public void validate(String number){
-		String res = "";
-		
 		if(persons.containsKey(number)){
-			res += "Inloggning gick, du kommer nu omdirigeras.";
-			new LibraryController(filePathPersons);
+			int result = JOptionPane.showConfirmDialog(null, "Inloggning gick, vill du gå vidare?");
+			
+			if(result == JOptionPane.OK_OPTION){
+				view.setVisible(false);
+				
+				new ItemsController(filePathPersons);
+			}
 		}
 		else{
-			res += "Inloggning gick ej, försök igen.";
+			JOptionPane.showMessageDialog(null, "Inloggning gick ej, försök igen.");
 		}
-		
-		JOptionPane.showMessageDialog(null, res);
 	}
 }
 

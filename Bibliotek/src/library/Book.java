@@ -10,4 +10,12 @@ public class Book extends Media{
 		this.author = author;
 		this.bookTitle = bookTitle;
 	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public String getBookTitle() {
+		return bookTitle;
+	}
 }

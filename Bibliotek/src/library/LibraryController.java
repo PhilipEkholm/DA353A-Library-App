@@ -1,11 +1,63 @@
 package library;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import avltree.AVLTree;
 import common.GeneralController;
+import common.Person;
+import hashtableOH.HashtableOH;
 
 public class LibraryController extends GeneralController{
+	private static String filePathMedia = "files/Media.txt";
+	private AVLTree<String, Book> bookTree;
+	private AVLTree<String, DVD> DVDTree;
 
 	public LibraryController(String filePath) {
 		super(filePath);
 	}
 	
+	public static void readBooks(AVLTree<String, Book> tree, String filePath) 
+		throws FileNotFoundException, IOException{
+			
+		try(BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+		    String line = br.readLine();
+				
+		    while (line != null) {
+		    	String[] details = line.split(";");
+			   	if(details[0].equals("Book")){
+			   		Book b = new Book(details[1], Integer.parseInt(details[2]), details[3], details[4]);
+			        
+				    tree.put(b.getId(), b);
+				    line = br.readLine();
+			   	}
+			}
+		}
+	}
+	
+	public static void readDVDs(AVLTree<String, DVD> tree, String filePath) 
+		throws FileNotFoundException, IOException{
+				
+		try(BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+			String line = br.readLine();
+					
+			while (line != null) {
+			   String[] details = line.split(";");
+			   if(details[0].equals("DVD")){
+				   String[] actors = new String[details.length - 4];
+				   
+				   for(int i = 4; i < details.length; i++){
+					   actors[i - 4] = details[i];
+				   }
+				   
+				   DVD d = new DVD(details[1], Integer.parseInt(details[2]), details[3], actors);
+			        
+				   tree.put(d.getId(), d);
+				   line = br.readLine();
+			   }
+			}
+		}
+	}
 }

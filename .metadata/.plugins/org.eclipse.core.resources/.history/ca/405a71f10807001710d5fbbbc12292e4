@@ -1,0 +1,71 @@
+package login;
+
+import javax.swing.JOptionPane;
+
+import common.GeneralController;
+import library.LibraryController;
+
+/**
+ *	LoginController
+ *
+ * 	The LoginController is responsible for starting up the LoginView,
+ * 	as well as validating the number used for logging in.
+ */
+
+public class LoginController extends GeneralController{
+	private String filePathPersons;
+	
+	/**
+	 *	Default constructor will take arguments for loading
+	 *	in files required for the structure to work. These will 
+	 *	be sent to the super class for processing.
+	 *
+	 * 	@param filePathPersons the String containing the file
+	 * 	path for loading lantagare.txt
+	 */
+	
+	public LoginController(String filePathPersons){
+		super(filePathPersons);
+		this.filePathPersons = filePathPersons;
+	}
+	
+	/**
+	 *	The method will call  
+	 */
+	
+	public void startLoginView(){
+		super.loadWindow(new LoginView(this), "Logga in");
+	}
+	
+	/**
+	 *	Validates the number passed in, will allow access
+	 *	if number can be found as key. Result will be shown as
+	 *	a JOptionPane.
+	 *
+	 * 	@param number number entered in the loginView
+	 */
+	
+	public void validate(String number){
+		if(persons.containsKey(number)){
+			
+			int result = JOptionPane.showConfirmDialog(null, "Inloggning gick, du kommer nu omdirigeras");
+			
+			if(result == JOptionPane.OK_OPTION){
+				
+			}
+		}
+		else{
+			JOptionPane.showMessageDialog(null, "Inloggning gick ej, försök igen.");
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+

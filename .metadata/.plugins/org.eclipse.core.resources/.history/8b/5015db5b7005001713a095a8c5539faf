@@ -1,0 +1,15 @@
+package common;
+
+import login.LoginController;
+
+public class GeneralController {
+	protected Person persons[];
+	
+	public GeneralController(){
+		
+	}
+	
+	private void loadPersons(){
+		
+	}
+}

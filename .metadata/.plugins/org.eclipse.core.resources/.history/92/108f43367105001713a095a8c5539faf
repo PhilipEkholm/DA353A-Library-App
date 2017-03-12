@@ -1,0 +1,41 @@
+package helpclasses;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import common.Person;
+import structures.HashtableOH;
+
+public class Streams {
+	private static void readFilesWithStream() throws FileNotFoundException, IOException{
+		// Här skapas bl.a. lämplig datastruktur String str;
+		try(BufferedReader br = new BufferedReader(new FileReader("Files/Lantagare.txt"))) {
+		    StringBuilder sb = new StringBuilder();
+		    String line = br.readLine();
+
+		    while (line != null) {
+		        sb.append(line);
+		        sb.append(System.lineSeparator());
+		        line = br.readLine();
+		    }
+		    String everything = sb.toString();
+		    System.out.println(everything);
+		}
+	}
+	
+	public static void main(String[] args) {
+		HashtableOH<String, Person> map = new HashtableOH<String, Person>(20);
+		
+		try {
+			Streams.readFilesWithStream();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

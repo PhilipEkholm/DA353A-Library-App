@@ -1,0 +1,57 @@
+package exchange;
+
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class BorrowedItemsView extends JPanel{
+	private static final long serialVersionUID = 1L;
+	private JLabel 	personnrLabel = new JLabel("Ändra låntagare: "),
+					returnLabel = new JLabel("Återlämna: ");
+	private JTextArea currentItems = new JTextArea();
+	private JTextField 	personField = new JTextField(),
+						returnField = new JTextField();
+	private JButton changePersonButton = new JButton("Ändra!"),
+					returnItemButton = new JButton("Återlämna!");
+	
+	public BorrowedItemsView(){
+		this.setLayout(new FlowLayout());
+		this.setSize(new Dimension(400, 420));
+		
+		this.setDimensions();
+		this.setActionListeners();
+		this.addComponents();
+	}
+	
+	private void setDimensions(){
+		personnrLabel.setPreferredSize(new Dimension(100, 25));
+		returnLabel.setPreferredSize(new Dimension(100, 25));
+		
+		currentItems.setPreferredSize(new Dimension(300, 300));
+		
+		personField.setPreferredSize(new Dimension(100, 25));
+		returnField.setPreferredSize(new Dimension(100, 25));
+		
+	}
+	
+	private void setActionListeners(){
+		
+	}
+	
+	private void addComponents(){
+		this.add(personnrLabel);
+		this.add(personField);
+		this.add(changePersonButton);
+		
+		this.add(currentItems);
+		
+		this.add(returnLabel);
+		this.add(returnField);
+		this.add(returnItemButton);
+	}
+}

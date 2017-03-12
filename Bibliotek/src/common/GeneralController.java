@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import hashtableOH.ArrayList;
 import hashtableOH.HashtableOH;
 
 /**
@@ -19,6 +20,7 @@ import hashtableOH.HashtableOH;
 
 public class GeneralController {
 	protected HashtableOH<String, Person> persons = new HashtableOH<String, Person>(15);
+	private ArrayList<JFrame> windowSessions = new ArrayList<JFrame>();
 	
 	public GeneralController(String filePath){
 		this.loadPersons(filePath);
@@ -38,6 +40,7 @@ public class GeneralController {
 	
 	protected void loadWindow(JPanel panel, String windowTitle){
 		JFrame frame = new JFrame(windowTitle);
+		windowSessions.add(frame);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocation(40, 40);
 		
@@ -45,6 +48,10 @@ public class GeneralController {
 		
 		frame.pack();
 		frame.setVisible(true);
+	}
+	
+	protected JFrame getWindow(int index){
+		return windowSessions.get(index);
 	}
 	
 	public static void readPersons(HashtableOH<String, Person> map, String filePath) 

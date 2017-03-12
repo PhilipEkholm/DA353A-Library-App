@@ -1,9 +1,0 @@
-package login;
-
-import common.GeneralController;
-
-public class LoginController extends GeneralController{
-	public LoginController(){
-		System.out.println("LoginController");
-	}
-}

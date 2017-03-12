@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="library.LibraryController"/>
-<fullyQualifiedTypeName name="hashtableOH.ArrayList"/>
 <fullyQualifiedTypeName name="avltree.AVLTree"/>
+<fullyQualifiedTypeName name="hashtableOH.ArrayList"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="java.awt.event.WindowEvent"/>
+<fullyQualifiedTypeName name="javax.swing.JPanel"/>
+<fullyQualifiedTypeName name="library.LibraryController"/>
+<fullyQualifiedTypeName name="exchange.ItemsController"/>
 </qualifiedTypeNameHistroy>

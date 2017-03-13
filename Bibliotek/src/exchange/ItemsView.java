@@ -10,16 +10,19 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class ItemsView extends JPanel{
 	private static final long serialVersionUID = 1L;
-	private JPanel 	header = new JPanel();
+	private JPanel 	headerPanel = new JPanel();
+	private JPanel libraryPanel = new JPanel();
 	private JTextField searchField = new JTextField("Sökfält");
-	private String[] comboString = { "Sök efter", "Media" , "Id" , "Författare" , "Titel" , "Utgivningsår" };
+	private String[] comboString = { "Sök efter", "Media" , "Id" , "Författare" , 
+									"Titel" , "Utgivningsår", "Skådespelare" };
 	private JComboBox<String> searchOption =  new JComboBox<String>(comboString);
-	private GridLayout searchGrid = new GridLayout(2,0);
 	private JButton searchButton = new JButton("Sök");
+	private JTextArea area = new JTextArea("Library");
 	
 	
 	public ItemsView(){
@@ -34,7 +37,7 @@ public class ItemsView extends JPanel{
 		searchField.setPreferredSize(new Dimension(200,25));
 		searchOption.setPreferredSize(new Dimension(150,25));
 		searchButton.setPreferredSize(new Dimension(100,25));
-		
+		area.setPreferredSize(new Dimension(700,500));
 		
 	}
 	
@@ -43,10 +46,12 @@ public class ItemsView extends JPanel{
 	}
 	
 	private void addComponents(){
-		header.add(searchField);
-		header.add(searchOption);
-		header.add(searchButton);
-		this.add(header, BorderLayout.NORTH);
+		headerPanel.add(searchField);
+		headerPanel.add(searchOption);
+		headerPanel.add(searchButton);
+		libraryPanel.add(area);
+		this.add(headerPanel, BorderLayout.NORTH);
+		this.add(libraryPanel, BorderLayout.CENTER);
 	}
 	
 	private class AL implements ActionListener{

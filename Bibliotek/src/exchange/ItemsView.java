@@ -1,8 +1,8 @@
 package exchange;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -27,8 +27,8 @@ public class ItemsView extends JPanel{
 	private JComboBox<String> searchOption =  new JComboBox<String>(comboString);
 	private JButton searchButton = new JButton("Sök");
 	private JButton borrowButton = new JButton("Låna");
-	private JTextArea area = new JTextArea("Library");
-	
+	private JTextArea 	books = new JTextArea("Böcker"),
+						dvds = new JTextArea("DVD:er");
 	
 	public ItemsView(){
 		this.setLayout(new BorderLayout());
@@ -36,6 +36,8 @@ public class ItemsView extends JPanel{
 		this.setDimensions();
 		this.setActionListeners();
 		this.addComponents();
+		
+		libraryPanel.setLayout(new GridLayout(1, 2, 20, 20));
 	}
 	
 	private void setDimensions(){
@@ -46,7 +48,8 @@ public class ItemsView extends JPanel{
 		borrowLabel.setPreferredSize(new Dimension(120,25));
 		borrowField.setPreferredSize(new Dimension(150,25));
 		borrowButton.setPreferredSize(new Dimension(100,25));
-		area.setPreferredSize(new Dimension(700,500));
+		books.setPreferredSize(new Dimension(300,500));
+		dvds.setPreferredSize(new Dimension(300, 500));
 		
 	}
 	
@@ -59,7 +62,8 @@ public class ItemsView extends JPanel{
 		headerPanel.add(searchField);
 		headerPanel.add(searchOption);
 		headerPanel.add(searchButton);
-		libraryPanel.add(area);
+		libraryPanel.add(books);
+		libraryPanel.add(dvds);
 		borrowPanel.add(borrowLabel);
 		borrowPanel.add(borrowField);
 		borrowPanel.add(borrowButton);

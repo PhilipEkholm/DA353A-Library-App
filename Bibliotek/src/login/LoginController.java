@@ -26,7 +26,7 @@ public class LoginController extends GeneralController{
 	 */
 	
 	public LoginController(String filePathPersons){
-		super(filePathPersons);
+		super(filePathPersons, null);
 		this.filePathPersons = filePathPersons;
 	}
 	
@@ -49,13 +49,13 @@ public class LoginController extends GeneralController{
 	 */
 	
 	public void validate(String number){
-		if(persons.containsKey(number)){
+		if(persons.contains(number)){
 			int result = JOptionPane.showConfirmDialog(null, "Inloggning gick, vill du gå vidare?");
 			
 			if(result == JOptionPane.OK_OPTION){
 				view.setVisible(false);
 				
-				new ItemsController(filePathPersons, super.getWindow(0));
+				new ItemsController(filePathPersons, super.getWindow(0), persons.get(number));
 			}
 		}
 		else{

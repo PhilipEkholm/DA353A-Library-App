@@ -2,22 +2,16 @@ package common;
 
 import java.io.BufferedReader;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-
-
-	
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import hashtableOH.ArrayList;
-import hashtableOH.HashtableOH;
+import avltree.AVLTree;
+import avltree.ArrayList;
 
 /**
  *	GeneralController
@@ -27,11 +21,13 @@ import hashtableOH.HashtableOH;
  */
 
 public class GeneralController {
-	protected HashtableOH<String, Person> persons = new HashtableOH<String, Person>(15);
+	protected AVLTree<String, Person> persons = new AVLTree<String, Person>();
 	private ArrayList<JFrame> windowSessions = new ArrayList<JFrame>();
+	protected Person currentlyLoggedIn;
 	
-	public GeneralController(String filePath){
+	public GeneralController(String filePath, Person currentlyLoggedIn){
 		this.loadPersons(filePath);
+		this.currentlyLoggedIn = currentlyLoggedIn;
 	}
 	
 	private void loadPersons(String filePath){
@@ -66,7 +62,7 @@ public class GeneralController {
 		windowSessions.add(frame);
 	}
 	
-	public static void readPersons(HashtableOH<String, Person> map, String filePath) 
+	public static void readPersons(AVLTree<String, Person> tree, String filePath) 
 		throws FileNotFoundException, IOException{
 			
 		try(BufferedReader br = new BufferedReader(new FileReader(filePath))) {
@@ -76,7 +72,7 @@ public class GeneralController {
 			   	String[] details = line.split(";");
 			   	Person p = new Person(details[0], details[1], details[2]);
 			        
-			    map.put(p.getPersonnr(), p);
+			    tree.put(p.getPersonnr(), p);
 			    line = br.readLine();
 			}
 		}

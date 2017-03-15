@@ -1,4 +1,4 @@
-package hashtableOH;
+package linkedqueue;
 
 /**
  *	ListNode E

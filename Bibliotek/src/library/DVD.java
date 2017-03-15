@@ -24,4 +24,8 @@ public class DVD extends Media{
 		
 		return newArray;
 	}
+	
+	public String toString(){
+		return name + ", " + super.getYear() + ", ID: " + super.getId();
+	}
 }

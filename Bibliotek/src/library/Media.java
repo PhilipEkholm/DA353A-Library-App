@@ -25,6 +25,18 @@ public abstract class Media {
 	public String getId() { 
 		return id;
 	}
+	
+	public int getYear(){
+		return year;
+	}
+
+	public Person getBorrowedBy() {
+		return borrowedBy;
+	}
+
+	public void setBorrowedBy(Person borrowedBy) {
+		this.borrowedBy = borrowedBy;
+	}
 
 	public boolean equals( Object obj ) { 
 		if(obj instanceof Media) {

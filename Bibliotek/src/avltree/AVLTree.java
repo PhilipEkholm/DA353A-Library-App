@@ -75,7 +75,7 @@ public class AVLTree<K,V> implements SearchTree<K,V> {
     */
     
     public void put(K key, V value) {
-        tree = put(tree,key,value);        
+        tree = put(tree,key,value);
     } 
 
     /**

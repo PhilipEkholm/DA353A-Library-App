@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 
 public class BorrowedItemsView extends JPanel{
 	private static final long serialVersionUID = 1L;
+	private ItemsController controller;
 	private JLabel 	personnrLabel = new JLabel("Ändra låntagare: "),
 					returnLabel = new JLabel("Återlämna: ");
 	private JTextArea currentItems = new JTextArea();
@@ -21,9 +22,10 @@ public class BorrowedItemsView extends JPanel{
 	private JButton changePersonButton = new JButton("Ändra!"),
 					returnItemButton = new JButton("Återlämna!");
 	
-	public BorrowedItemsView(){
+	public BorrowedItemsView(ItemsController controller){
 		this.setLayout(new FlowLayout());
 		currentItems.setEditable(false);
+		this.controller = controller;
 		
 		this.setDimensions();
 		this.setActionListeners();
@@ -58,14 +60,6 @@ public class BorrowedItemsView extends JPanel{
 		this.add(returnItemButton);
 	}
 	
-	private void changeLogin(){
-		System.out.println("change login");
-	}
-	
-	private void returnItem(){
-		System.out.println("return item");
-	}
-	
 	private class AL implements ActionListener{
 
 		@Override
@@ -73,13 +67,16 @@ public class BorrowedItemsView extends JPanel{
 			BorrowedItemsView ref = BorrowedItemsView.this;
 			
 			if(e.getSource() == changePersonButton){
-				ref.changeLogin();
+				
 			}
 			else if(e.getSource() == returnItemButton){
-				ref.returnItem();
+				controller.returnItem(ref.returnField.getText());
 			}
 		}
-		
+	}
+	
+	public void setBorrowedItems(String items){
+		this.currentItems.setText(items);
 	}
 }
 

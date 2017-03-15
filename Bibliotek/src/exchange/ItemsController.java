@@ -1,17 +1,24 @@
 package exchange;
 
 import java.awt.Dimension;
+import java.util.Iterator;
 
 import javax.swing.JFrame;
 
+import avltree.ArrayList;
+import avltree.List;
+import common.Person;
+import library.Book;
+import library.DVD;
 import library.LibraryController;
 
 public class ItemsController extends LibraryController{
-	private ItemsView itemsView = new ItemsView();
-	private BorrowedItemsView borrowedItemsView = new BorrowedItemsView();
+	private ItemsView itemsView = new ItemsView(this);
+	private BorrowedItemsView borrowedItemsView = new BorrowedItemsView(this);
+	private ArrayList borrowedItems = new ArrayList();
 
-	public ItemsController(String filePath, JFrame oldFrame) {
-		super(filePath);
+	public ItemsController(String filePath, JFrame oldFrame, Person currentlyLoggedIn) {
+		super(filePath, currentlyLoggedIn);
 		super.addFrame(oldFrame);
 		super.loadWindow(itemsView, "Bibliotek");
 		
@@ -22,7 +29,83 @@ public class ItemsController extends LibraryController{
 		borrowedItemsFrame.setSize(new Dimension(400, 420));
 		borrowedItemsFrame.add(borrowedItemsView);
 		itemsFrame.setLocation(500, 40);
-		itemsFrame.setSize(new Dimension(800, 440));
+		itemsFrame.setSize(new Dimension(920, 440));
+		
+		this.listItems();
+	}
+	
+	public void listItems(){
+		String 	books = "",
+				dvds = "",
+				borrowedObjects = "";
+		
+		List<Book> 	booksList = bookTree.values();
+		List<DVD>	DVDList = DVDTree.values();
+		
+		for(int i = 0; i < booksList.size(); i++){
+			if(booksList.get(i).getBorrowedBy() == null){
+				books += booksList.get(i).toString() + "\n";
+			}
+		}
+		
+		for(int i = 0; i < DVDList.size(); i++){
+			if(DVDList.get(i).getBorrowedBy() == null){
+				dvds += DVDList.get(i).toString() + "\n";
+			}
+		}
+		
+		Iterator iter = borrowedItems.iterator();
+		
+		while(iter.hasNext()){
+			borrowedObjects += iter.next().toString() + "\n";
+		}
+		
+		borrowedItemsView.setBorrowedItems(borrowedObjects);
+		itemsView.setItems(books, dvds);
+	}
+	
+	public void borrow(String id){
+		if(bookTree.contains(id)){
+			Book targetBook = bookTree.get(id);
+			
+			if(targetBook.getBorrowedBy() == null){
+				targetBook.setBorrowedBy(super.currentlyLoggedIn);
+				borrowedItems.add(targetBook);
+				this.listItems();
+			}
+		}
+		else if(DVDTree.contains(id)){
+			DVD targetDVD = DVDTree.get(id);
+			
+			if(targetDVD.getBorrowedBy() == null){
+				targetDVD.setBorrowedBy(super.currentlyLoggedIn);
+				borrowedItems.add(targetDVD);
+				this.listItems();
+			}
+		}
+	}
+	
+	public void returnItem(String id){
+		if(bookTree.contains(id)){
+			Book targetBook = bookTree.get(id);
+			
+			if(targetBook.getBorrowedBy() != null && targetBook.getBorrowedBy().equals(currentlyLoggedIn)){
+				targetBook.setBorrowedBy(null);
+				int index = borrowedItems.indexOf(targetBook);
+				borrowedItems.remove(index);
+				this.listItems();
+			}
+		}
+		else if(DVDTree.contains(id)){
+			DVD targetDVD = DVDTree.get(id);
+			
+			if(targetDVD.getBorrowedBy() != null && targetDVD.getBorrowedBy().equals(currentlyLoggedIn)){
+				targetDVD.setBorrowedBy(null);
+				int index = borrowedItems.indexOf(targetDVD);
+				borrowedItems.remove(index);
+				this.listItems();
+			}
+		}
 	}
 }
 

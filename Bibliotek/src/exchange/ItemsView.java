@@ -15,6 +15,7 @@ import javax.swing.JTextField;
 
 public class ItemsView extends JPanel{
 	private static final long serialVersionUID = 1L;
+	private ItemsController controller;
 	private JPanel 	headerPanel = new JPanel();
 	private JPanel libraryPanel = new JPanel();
 	private JPanel borrowPanel = new JPanel();
@@ -30,14 +31,17 @@ public class ItemsView extends JPanel{
 	private JTextArea 	books = new JTextArea("Böcker"),
 						dvds = new JTextArea("DVD:er");
 	
-	public ItemsView(){
+	public ItemsView(ItemsController controller){
 		this.setLayout(new BorderLayout());
+		this.controller = controller;
 		
 		this.setDimensions();
 		this.setActionListeners();
 		this.addComponents();
 		
 		libraryPanel.setLayout(new GridLayout(1, 2, 20, 20));
+		books.setEditable(false);
+		dvds.setEditable(false);
 	}
 	
 	private void setDimensions(){
@@ -54,7 +58,21 @@ public class ItemsView extends JPanel{
 	}
 	
 	private void setActionListeners(){
-		searchButton.addActionListener(new AL());
+		searchButton.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		borrowButton.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ItemsView ref = ItemsView.this;
+				
+				controller.borrow(ref.borrowField.getText());
+			}
+		});
 	}
 	
 	private void addComponents(){
@@ -62,23 +80,22 @@ public class ItemsView extends JPanel{
 		headerPanel.add(searchField);
 		headerPanel.add(searchOption);
 		headerPanel.add(searchButton);
+		
 		libraryPanel.add(books);
 		libraryPanel.add(dvds);
+		
 		borrowPanel.add(borrowLabel);
 		borrowPanel.add(borrowField);
 		borrowPanel.add(borrowButton);
+		
 		this.add(headerPanel, BorderLayout.NORTH);
 		this.add(libraryPanel, BorderLayout.CENTER);
 		this.add(borrowPanel, BorderLayout.SOUTH);
 	}
 	
-	private class AL implements ActionListener{
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			//search(searchField.getText(), searchOption.getSelectedItem()); 
-		}
-		
+	public void setItems(String books, String DVDs){
+		this.books.setText(books);
+		this.dvds.setText(DVDs);
 	}
 }
 

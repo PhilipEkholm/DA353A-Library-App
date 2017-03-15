@@ -7,14 +7,15 @@ import java.io.IOException;
 
 import avltree.AVLTree;
 import common.GeneralController;
+import common.Person;
 
 public class LibraryController extends GeneralController{
 	private static String filePathMedia = "files/Media.txt";
 	protected AVLTree<String, Book> bookTree = new AVLTree<String, Book>();
 	protected AVLTree<String, DVD> DVDTree = new AVLTree<String, DVD>();
 
-	public LibraryController(String filePath) {
-		super(filePath);
+	public LibraryController(String filePath, Person currentlyLoggedIn) {
+		super(filePath, currentlyLoggedIn);
 		try {
 			LibraryController.readBooks(bookTree, filePathMedia);
 			LibraryController.readDVDs(DVDTree, filePathMedia);

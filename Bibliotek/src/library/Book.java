@@ -18,4 +18,8 @@ public class Book extends Media{
 	public String getBookTitle() {
 		return bookTitle;
 	}
+	
+	public String toString(){
+		return bookTitle + ", " + author + ", " + super.getYear() + ", ID: " + super.getId();
+	}
 }

@@ -24,12 +24,12 @@ public class ItemsController extends LibraryController{
 		
 		JFrame borrowedItemsFrame = super.getWindow(0);
 		JFrame itemsFrame = super.getWindow(1);
-		
+		borrowedItemsFrame.setLocation(450, 5);
 		borrowedItemsFrame.setTitle("Dina låneobjekt");
-		borrowedItemsFrame.setSize(new Dimension(400, 420));
+		borrowedItemsFrame.setSize(new Dimension(550, 420));
 		borrowedItemsFrame.add(borrowedItemsView);
-		itemsFrame.setLocation(500, 40);
-		itemsFrame.setSize(new Dimension(920, 440));
+		itemsFrame.setLocation(200, 445);
+		itemsFrame.setSize(new Dimension(1000, 400));
 		
 		this.listItems();
 	}

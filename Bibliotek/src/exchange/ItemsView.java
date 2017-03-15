@@ -16,17 +16,10 @@ import javax.swing.JTextField;
 public class ItemsView extends JPanel{
 	private static final long serialVersionUID = 1L;
 	private ItemsController controller;
-	private JPanel 	headerPanel = new JPanel();
 	private JPanel libraryPanel = new JPanel();
 	private JPanel borrowPanel = new JPanel();
-	private JLabel searchLabel = new JLabel("Sök efter media:");
 	private JLabel borrowLabel = new JLabel("Ange media id:");
-	private JTextField searchField = new JTextField();
 	private JTextField borrowField = new JTextField();
-	private String[] comboString = { "Sök efter", "Media" , "Id" , "Författare" , 
-									"Titel" , "Utgivningsår", "Skådespelare" };
-	private JComboBox<String> searchOption =  new JComboBox<String>(comboString);
-	private JButton searchButton = new JButton("Sök");
 	private JButton borrowButton = new JButton("Låna");
 	private JTextArea 	books = new JTextArea("Böcker"),
 						dvds = new JTextArea("DVD:er");
@@ -45,10 +38,6 @@ public class ItemsView extends JPanel{
 	}
 	
 	private void setDimensions(){
-		searchLabel.setPreferredSize(new Dimension(120,25));
-		searchField.setPreferredSize(new Dimension(200,25));
-		searchOption.setPreferredSize(new Dimension(150,25));
-		searchButton.setPreferredSize(new Dimension(100,25));
 		borrowLabel.setPreferredSize(new Dimension(120,25));
 		borrowField.setPreferredSize(new Dimension(150,25));
 		borrowButton.setPreferredSize(new Dimension(100,25));
@@ -58,13 +47,7 @@ public class ItemsView extends JPanel{
 	}
 	
 	private void setActionListeners(){
-		searchButton.addActionListener(new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		
+
 		borrowButton.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -76,11 +59,6 @@ public class ItemsView extends JPanel{
 	}
 	
 	private void addComponents(){
-		headerPanel.add(searchLabel);
-		headerPanel.add(searchField);
-		headerPanel.add(searchOption);
-		headerPanel.add(searchButton);
-		
 		libraryPanel.add(books);
 		libraryPanel.add(dvds);
 		
@@ -88,7 +66,6 @@ public class ItemsView extends JPanel{
 		borrowPanel.add(borrowField);
 		borrowPanel.add(borrowButton);
 		
-		this.add(headerPanel, BorderLayout.NORTH);
 		this.add(libraryPanel, BorderLayout.CENTER);
 		this.add(borrowPanel, BorderLayout.SOUTH);
 	}

@@ -8,8 +8,10 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 
 public class BorrowedItemsView extends JPanel{
 	private static final long serialVersionUID = 1L;
@@ -21,22 +23,23 @@ public class BorrowedItemsView extends JPanel{
 						returnField = new JTextField();
 	private JButton changePersonButton = new JButton("Ändra!"),
 					returnItemButton = new JButton("Återlämna!");
+	private JScrollPane scrollPane = new JScrollPane(currentItems);
 	
 	public BorrowedItemsView(ItemsController controller){
 		this.setLayout(new FlowLayout());
 		currentItems.setEditable(false);
 		this.controller = controller;
-		
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		this.setDimensions();
-		this.setActionListeners();
+		this.setActionListeners();	
 		this.addComponents();
 	}
 	
 	private void setDimensions(){
 		personnrLabel.setPreferredSize(new Dimension(100, 25));
 		returnLabel.setPreferredSize(new Dimension(100, 25));
-		
-		currentItems.setPreferredSize(new Dimension(300, 300));
+		scrollPane.setPreferredSize(new Dimension(500, 300));
+		currentItems.setPreferredSize(new Dimension(500, 300));
 		
 		personField.setPreferredSize(new Dimension(100, 25));
 		returnField.setPreferredSize(new Dimension(100, 25));
@@ -52,8 +55,7 @@ public class BorrowedItemsView extends JPanel{
 		this.add(personnrLabel);
 		this.add(personField);
 		this.add(changePersonButton);
-		
-		this.add(currentItems);
+		this.add(scrollPane);
 		
 		this.add(returnLabel);
 		this.add(returnField);
@@ -77,6 +79,7 @@ public class BorrowedItemsView extends JPanel{
 	
 	public void setBorrowedItems(String items){
 		this.currentItems.setText(items);
+		
 	}
 }
 

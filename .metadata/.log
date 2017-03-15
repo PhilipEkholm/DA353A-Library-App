@@ -3850,6 +3850,7 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 
 !ENTRY org.eclipse.core.resources 4 567 2017-03-14 10:09:16.131
 !MESSAGE The project description file (.project) for 'Bibliotek' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+<<<<<<< Updated upstream
 =======
 !SESSION 2017-03-14 19:10:16.813 -----------------------------------------------
 eclipse.buildId=4.6.0.I20160606-1100
@@ -3865,4 +3866,16 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+>>>>>>> Stashed changes
+=======
+!SESSION 2017-03-14 10:15:05.281 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_101
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=sv_SE
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/Fille/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/Fille/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2017-03-14 10:15:09.958
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
 >>>>>>> Stashed changes

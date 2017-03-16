@@ -1,0 +1,2 @@
+INDEX VERSION 1.129+/Users/Fille/Desktop/DA353A_GU01/.metadata/.plugins/org.eclipse.jdt.core
+1735796480.index

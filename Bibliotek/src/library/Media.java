@@ -1,31 +1,30 @@
 package library;
+import java.util.Date;
 
-import common.Person;
-
-//Klassen Media är abstrakt och måste därför ärvas. Böcker och dvs- filmer
-//ska representeras av klasser vilka ärver Media-klassen.
+import models.Person;
 
 /**
- *	Media
- *
- * 	A generalized abstract object which is inherited by Book and DVD
- */
+* Media
+*
+* A generalized abstract object which is inherited by Book and DVD
+*/
 
 public abstract class Media {
 	private String id;
 	private Person borrowedBy;
+	private Date dateBorrowed;
 	private int year;
-
-	public Media( String id, int year) { 
+	
+	public Media( String id, int year) {
 		this.id = id;
 		this.borrowedBy = null;
 		this.year = year;
 	}
 
-	public String getId() { 
+	public String getId() {
 		return id;
 	}
-	
+
 	public int getYear(){
 		return year;
 	}
@@ -34,26 +33,26 @@ public abstract class Media {
 		return borrowedBy;
 	}
 
+	public Date getDateBorrowed() {
+		return dateBorrowed;
+	}
+
+	public void setDateBorrowed(Date dateBorrowed) {
+		this.dateBorrowed = dateBorrowed;
+	}
+
 	public void setBorrowedBy(Person borrowedBy) {
 		this.borrowedBy = borrowedBy;
 	}
-
-	public boolean equals( Object obj ) { 
+	
+	public boolean equals( Object obj ) {
 		if(obj instanceof Media) {
 			Media media = (Media)obj;
-			return id.equals( media.getId() ); 
+			return id.equals( media.getId() );
 		}
-		
-		return false; 
+		return false;
 	}
 }
-
-
-
-
-
-
-
 
 
 

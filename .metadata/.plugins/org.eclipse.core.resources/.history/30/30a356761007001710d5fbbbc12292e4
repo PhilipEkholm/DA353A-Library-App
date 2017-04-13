@@ -1,5 +1,0 @@
-package exchange;
-
-public class BorrowedItemsView extends JPanel{
-
-}

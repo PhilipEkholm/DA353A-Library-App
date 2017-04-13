@@ -2,6 +2,11 @@ package library;
 
 import java.util.Comparator;
 
+/**
+*	Used for PriorityQueue in order to sort media-objects
+*	corresponding to time borrowed.
+*/
+
 public class CompareDateBorrowed implements Comparator<Media>{
 
 	@Override

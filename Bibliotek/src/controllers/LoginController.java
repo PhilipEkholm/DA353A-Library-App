@@ -14,6 +14,7 @@ import views.LoginView;
 * The LoginController is responsible for starting up the LoginView,
 * as well as validating the number used for logging in.
 */
+
 public class LoginController{
 	private LoginView view = new LoginView(this);
 	private PersonModel personModel;

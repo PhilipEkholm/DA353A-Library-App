@@ -346,5 +346,7 @@ tmp/
 *.gho
 *.ori
 *.tmp
+*.vux
+*.bak_000f
 
 # End of https://www.gitignore.io/api/backup

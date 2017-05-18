@@ -144,7 +144,7 @@ public class ItemsController{
 	/**
 	 *	Change the user that is currently logged in.
 	 *
-	 * 	@param personId personnr to be used for verification
+	 * 	@param personId personnr to be used for verification.
 	 */
 	
 	public void changeUser(String personId){
@@ -164,7 +164,7 @@ public class ItemsController{
 	}
 	
 	/**
-	 *	Log out the user 
+	 *	Log out the user.
 	 */
 	
 	public void logOut(){

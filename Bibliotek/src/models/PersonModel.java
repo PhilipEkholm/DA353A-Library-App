@@ -30,6 +30,13 @@ public class PersonModel {
 		}
 	}
 	
+	/**
+	 *	Read in all persons from the lantagare file using a FileReader.
+	 *
+	 * 	@param tree the AVL-structure to fill with found persons.
+	 * 	@param filePath the relative directory path to the file.
+	 */
+	
 	public static void readPersons(AVLTree<String, Person> tree, String filePath) 
 		throws FileNotFoundException, IOException{
 		try(BufferedReader br = new BufferedReader(new FileReader(filePath))) {

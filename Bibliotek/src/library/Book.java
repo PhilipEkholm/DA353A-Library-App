@@ -1,7 +1,7 @@
 package library;
 
 /**
-*   The Book class for book.
+*   The Book class for a book.
 */
 
 public class Book extends Media{
@@ -12,14 +12,26 @@ public class Book extends Media{
 		this.author = author;
 		this.bookTitle = bookTitle;
 	}
+	
+	/**
+	 * 	@return the author of the book.
+	 */
 
 	public String getAuthor() {
 		return author;
 	}
+	
+	/**
+	 * 	@return the title of the book.
+	 */
 
 	public String getBookTitle() {
 		return bookTitle;
 	}
+	
+	/**
+	 * 	@return the data about the book as a string.
+	 */
 
 	public String toString(){
 		return bookTitle + ", " + author + ", " + super.getYear() + ", ID: " + super.getId();

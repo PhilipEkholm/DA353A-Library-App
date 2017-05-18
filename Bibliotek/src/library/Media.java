@@ -45,6 +45,16 @@ public abstract class Media {
 		this.borrowedBy = borrowedBy;
 	}
 	
+	/**
+	 *	Equals is overriden and will return true if the id of the media
+	 *	matches the one passed.
+	 *
+	 *	@param obj the object to be matched to see if it's equal.
+	 *	@return true if id matches, otherwise false.
+	 */
+	
+	@Override
+	
 	public boolean equals( Object obj ) {
 		if(obj instanceof Media) {
 			Media media = (Media)obj;

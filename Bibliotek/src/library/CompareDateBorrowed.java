@@ -4,7 +4,8 @@ import java.util.Comparator;
 
 /**
 *	Used for PriorityQueue in order to sort media-objects
-*	corresponding to time borrowed.
+*	corresponding to time borrowed. Used for sorting borrowed objects
+*	first.
 */
 
 public class CompareDateBorrowed implements Comparator<Media>{

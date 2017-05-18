@@ -82,14 +82,4 @@ class AVLNode<K,V> {
         if( right != null )
             right.print();
     }
-
-    /**
-    *   Print out the structure using a JOption message dialog, will print 
-    *   this node and all children to it, uses A ShowAVL object to represent them
-    *   graphically. 
-    */
-    
-    public void showAVL() {
-        javax.swing.JOptionPane.showMessageDialog( null, new ShowAVL( this, 800,600 ), "Show tree", javax.swing.JOptionPane.PLAIN_MESSAGE );
-    }
 }
